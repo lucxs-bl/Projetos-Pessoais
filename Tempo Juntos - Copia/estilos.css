@@ -1,0 +1,275 @@
+html,
+body {
+  font-family: "Poppins";
+  background-image: radial-gradient(ellipse at top, #080e21 0%, #1b2735 95%);
+  background-size: cover;
+  background-attachment: fixed;
+  overflow-x: hidden;
+  margin: 0;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+
+}
+
+@font-face {
+  font-family: "fabella";
+  src: url("fonts/fabella-flower.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "angelia";
+  src: url("fonts/Angelia Beauty.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Christmas";
+  src: url("fonts/ChristmasTwinklePersonaluse-Regular.ttf") format("truetype");
+
+}
+
+@font-face {
+  font-family: "Pinyon";
+  src: url("fonts/PinyonScript-Regular.ttf") format("truetype"); 
+}
+
+.caixa {
+  background-color: #6097b45d;
+  background-color: #686d7610;
+  border-radius: 10px;
+  padding: 5px 10px;
+ 
+}
+
+.caixa-tempo {
+  font-family: "Poppins";
+  font-weight: 500;
+  color: #080e21;
+}
+
+
+/* Centraliza tudo */
+.container {
+  display: flex;
+  flex-direction: column; /* Itens organizados verticalmente */
+  align-items: center; /* Centraliza os itens horizontalmente */
+  text-align: center;
+}
+
+/* Caixa principal */
+.container-bg {
+  width: 100%;
+  max-width: 300px; /* Ajuste conforme necessário */
+  padding: 20px;
+  background: #F9F7F7;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px; /* Espaço abaixo */
+  margin-top: 200px;
+}
+
+/* Mensagem*/
+
+.nomes h1 {
+  font-size: 1.8rem;
+  font-family: "Christmas";
+  color: #080e21;
+  margin-bottom: 20px;
+}
+
+
+.mensagem p {
+  color: #F9F7F7;
+  font-style: italic;
+
+}
+
+.mensagem p:nth-child(2) {
+  font-size: 1.2rem;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  color: #F9F7F7;
+}
+
+.mensagem p:nth-child(3) {
+  font-size: 4rem;
+  font-family: "fabella";
+  color: #F9F7F7;
+}
+
+.glowing-text {
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+  background-image: linear-gradient(90deg, #f1f1f1, #1b2735, #f1f1f1);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 3s linear infinite;
+}
+
+@keyframes shine {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+/* Itens abaixo do container-bg */
+.botao,
+.mensagem {
+  text-align: center;
+  width: 100%;
+  max-width: 300px; /* Mantém alinhado com container-bg */
+}
+
+.clique {
+  margin-top: 40px;
+  margin-bottom: 200px;
+}
+
+.linha {
+  width: 100px;
+  height: 1px;
+  background-color: #F9F7F7;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+/* FOTOS */
+/* Estilos do slideshow */
+.fotos {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  height: 400px; /* Ajuste conforme necessário */
+  overflow: hidden;
+}
+
+.fotos > div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.fotos > div.active {
+  opacity: 1;
+}
+
+.image-slide {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+#contadorContainer {
+  background-color: #21355500; /* Fundo semi-transparente */
+  padding: 20px; /* Espaço interno */
+  border-radius: 10px; /* Bordas arredondadas */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  text-align: center; /* Centraliza o texto */
+  max-width: 400px; /* Largura máxima */
+  margin: 20px auto; /* Centraliza no meio da tela */
+}
+
+/* BOTÃO */
+.button {
+  cursor: pointer;
+  position: relative;
+  padding: 10px 24px;
+  font-size: 1rem;
+  color: #F9F7F7;
+  border: 2px solid #F9F7F7;
+  border-radius: 34px;
+  background-color: transparent;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  overflow: hidden;
+  margin-bottom: 15px;
+  margin-top: 20px;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 50px;
+  height: 50px;
+  border-radius: inherit;
+  scale: 0;
+  z-index: -1;
+  background-color: #F9F7F7;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.button:hover::before {
+  scale: 3;
+}
+
+.button:hover {
+  color: #080e21;
+  scale: 1.1;
+  box-shadow: 0 0px 20px #F9F7F7;
+}
+
+.button:active {
+  scale: 1;
+}
+
+.pulse {
+  animation: pulsar 2.5s infinite; /* Animação infinita */
+}
+
+@keyframes pulsar {
+  0% {
+    transform: scale(1); /* Tamanho inicial */
+    box-shadow: 0 0 10px rgba(255, 233, 240, 0.6); /* Brilho inicial */
+  }
+  50% {
+    transform: scale(1.1); /* Cresce um pouco */
+    box-shadow: 0 0 20px rgba(255, 233, 240, 0.8); /* Brilho máximo */
+  }
+  100% {
+    transform: scale(1); /* Retorna ao tamanho original */
+    box-shadow: 0 0 10px rgba(255, 233, 240, 0.6); /* Brilho inicial */
+  }
+}
+
+/* MENSAGENS FOFAS */
+
+#fireworkButton {
+  margin-top: 30px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#message {
+  font-size: 24px;
+  font-weight: bold;
+  color: #F9F7F7;
+  display: none; /* Começa invisível */
+  position: relative;
+  animation: fireworks 2s ease-out forwards;
+}
+
+@keyframes fireworks {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
